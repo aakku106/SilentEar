@@ -1,0 +1,26 @@
+{
+  "name": "SilentEar",
+  "short_name": "SilentEar",
+  "id": "./",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#1a1a1a",
+  "theme_color": "#1a1a1a",
+  "prefer_related_applications": false,
+  "description": "Track sounds while you sleep",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    }
+  ]
+}
