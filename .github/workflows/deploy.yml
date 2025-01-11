@@ -1,0 +1,43 @@
+# @format
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository
+      - uses: actions/checkout@v2
+
+      # Step 2: Setup .NET SDK (for Blazor app)
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "8.0.x"
+
+      # Step 3: Publish the Blazor Project
+      - name: Publish .NET Project
+        run: dotnet publish -c Release -o release --nologo
+
+      # Step 4: Add .nojekyll file to prevent Jekyll processing
+      - name: Add .nojekyll file
+        run: touch release/wwwroot/.nojekyll
+
+      # Step 5: Modify base tag in index.html (if necessary for your subdirectory)
+      - name: Change base tag (if needed)
+        run: sed -i 's|<base href="\/" />|<base href="\/" />|g' release/wwwroot/index.html
+
+      # Step 6: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # Target the gh-pages branch
+          folder: release/wwwroot # Path to the built app
