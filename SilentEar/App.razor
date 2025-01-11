@@ -1,0 +1,15 @@
+﻿@using SilentEar.Pages
+@using SilentEar.Shared
+
+<Router AppAssembly="@typeof(App).Assembly">
+    <Found Context="routeData">
+        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+    </Found>
+    <NotFound>
+        <LayoutView Layout="@typeof(MainLayout)">
+            <SoundRecorder />
+        </LayoutView>
+    </NotFound>
+</Router>
+
+<SplashScreen />

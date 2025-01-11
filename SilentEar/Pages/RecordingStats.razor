@@ -1,0 +1,83 @@
+@using SilentEar.Models
+@using System.Linq
+
+<div class="stats-container">
+    <div class="stats-card">
+        <h4>Today</h4>
+        <div class="stat-item">
+            <span>Total</span>
+            <span>@_todayRecordings.Count sounds</span>
+        </div>
+        @if (_todayRecordings.Any())
+        {
+            <div class="stat-item">
+                <span>First</span>
+                <span>@_todayRecordings.Min(r => r.Timestamp).ToString("HH:mm")</span>
+            </div>
+            <div class="stat-item">
+            <span>Last</span>
+            <span>@_todayRecordings.Max(r => r.Timestamp).ToString("HH:mm")</span>
+        </div>
+            <div class="stat-item">
+            <span>Peak</span>
+            <span>@GetPeakHour()</span>
+        </div>
+        }
+    </div>
+
+    <div class="stats-card">
+        <h4>Last 7 Days</h4>
+        <div class="weekly-chart">
+            @foreach (var day in _weeklyData)
+            {
+                <div class="chart-bar" style="height: @(GetBarHeight(day.Value))px"
+                    title="@($"{day.Key:MMM dd}: {day.Value} sounds")">
+                    <span class="bar-label">@day.Key.ToString("dd")</span>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public List<SoundSegment> Recordings { get; set; } = new();
+
+    private List<SoundSegment> _todayRecordings = new();
+    private Dictionary<DateTime, int> _weeklyData = new();
+
+    protected override void OnParametersSet()
+    {
+        var today = DateTime.Today;
+        _todayRecordings = Recordings.Where(r => r.Timestamp.Date == today).ToList();
+
+        // Calculate weekly data
+        var lastWeek = Enumerable.Range(0, 7)
+        .Select(i => DateTime.Today.AddDays(-i))
+        .ToDictionary(
+        date => date,
+        date => Recordings.Count(r => r.Timestamp.Date == date)
+        );
+
+        _weeklyData = lastWeek;
+    }
+
+    private string GetPeakHour()
+    {
+        if (!_todayRecordings.Any()) return "N/A";
+
+        var peakHour = _todayRecordings
+        .GroupBy(r => r.Timestamp.Hour)
+        .OrderByDescending(g => g.Count())
+        .First();
+
+        return $"{peakHour.Key:D2}:00 ({peakHour.Count()} recordings)";
+    }
+
+    private int GetBarHeight(int value)
+    {
+        if (value == 0) return 1;
+        // Scale the height to look good on mobile
+        return Math.Min(value * 15, 130);
+    }
+}

@@ -1,0 +1,147 @@
+@using SilentEar.Services
+@using SilentEar.Models
+@inject IJSRuntime JSRuntime
+@inject LocalStorageService LocalStorage
+@implements IDisposable
+
+<div class="recorder-container">
+    @if (!_hasPermission)
+    {
+        <div class="welcome-screen @(_isTransitioning ? "hiding" : "")">
+            <h1>SilentEar</h1>
+            <p>Track sounds while you sleep</p>
+            <button class="btn-primary" @onclick="StartTransition">
+                Get Started
+            </button>
+        </div>
+    }
+    else
+    {
+        <div class="controls">
+            <button class="@(_isRecording ? "btn-danger" : "btn-primary")"
+                @onclick="@(_isRecording ? StopMonitoringAsync : StartMonitoringAsync)">
+                @(_isRecording ? "Stop Monitoring" : "Start Monitoring")
+            </button>
+
+            @if (_isCurrentlyRecording)
+            {
+                <div class="recording-indicator">
+                    <span class="recording-dot"></span>
+                    Recording Sound
+                </div>
+            }
+
+            <div class="threshold-control">
+                <label>Sensitivity: @_threshold</label>
+                <input type="range" min="10" max="40" step="1" @bind="_threshold" @bind:event="oninput" />
+            </div>
+        </div>
+
+        @if (_recordings.Any())
+        {
+            <RecordingStats Recordings="@_recordings" />
+
+            <div class="recordings-list">
+        @foreach (var recording in _recordings.OrderByDescending(r => r.Timestamp))
+                {
+                    <div class="recording-item">
+                        <span>@recording.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</span>
+                        <div class="recording-controls">
+                            <button class="btn-small" @onclick="() => PlayRecording(recording)">
+                                Play
+                            </button>
+                            <button class="btn-small btn-danger" @onclick="() => DeleteRecording(recording)">
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+    }
+</div>
+
+@code {
+    private bool _hasPermission;
+    private bool _isRecording;
+    private bool _isCurrentlyRecording;
+    private int _threshold = 15;
+    private List<SoundSegment> _recordings = new();
+    private DotNetObjectReference<SoundRecorder>? _objectReference;
+    private bool _isTransitioning;
+
+    protected override async Task OnInitializedAsync()
+    {
+        _objectReference = DotNetObjectReference.Create(this);
+        _recordings = await LocalStorage.LoadRecordingsAsync();
+    }
+
+    private async Task RequestPermissionAsync()
+    {
+        _hasPermission = await JSRuntime.InvokeAsync<bool>("audioRecorder.requestPermission");
+        StateHasChanged();
+    }
+
+    private async Task StartMonitoringAsync()
+    {
+        _isRecording = true;
+        await JSRuntime.InvokeVoidAsync("audioRecorder.startMonitoring", _objectReference, _threshold);
+    }
+
+    private async Task StopMonitoringAsync()
+    {
+        _isRecording = false;
+        await JSRuntime.InvokeVoidAsync("audioRecorder.stopMonitoring");
+    }
+
+    private async Task PlayRecording(SoundSegment recording)
+    {
+        await JSRuntime.InvokeVoidAsync("audioRecorder.playRecording", recording.AudioUrl);
+    }
+
+    private async Task DeleteRecording(SoundSegment recording)
+    {
+        _recordings.Remove(recording);
+        await JSRuntime.InvokeVoidAsync("audioRecorder.revokeObjectURL", recording.AudioUrl);
+        await LocalStorage.SaveRecordingsAsync(_recordings);
+        StateHasChanged();
+    }
+
+    [JSInvokable]
+    public void OnRecordingStatusChange(bool isRecording)
+    {
+        _isCurrentlyRecording = isRecording;
+        StateHasChanged();
+    }
+
+    [JSInvokable]
+    public async Task OnSoundRecorded(string audioUrl, DateTime timestamp)
+    {
+        _recordings.Add(new SoundSegment
+            {
+                Timestamp = timestamp,
+                AudioUrl = audioUrl
+            });
+        await LocalStorage.SaveRecordingsAsync(_recordings);
+        StateHasChanged();
+    }
+
+    [JSInvokable]
+    public void OnPlaybackEnded()
+    {
+        StateHasChanged();
+    }
+
+    public void Dispose()
+    {
+        _objectReference?.Dispose();
+    }
+
+    private async Task StartTransition()
+    {
+        _isTransitioning = true;
+        await Task.Delay(300); // Wait for fade out animation
+        await RequestPermissionAsync();
+        _isTransitioning = false;
+    }
+}
