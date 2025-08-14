@@ -21,13 +21,13 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "8.0.100" # Use specific stable version
+          dotnet-version: "8.0.101" # Use very stable version without jiterpreter issues
 
       # Step 3: Restore and Publish the Blazor Project
       - name: Restore and Publish .NET Project
         run: |
           dotnet restore SilentEar/SilentEar.csproj
-          dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo -p:WasmEnableJiterpreter=false
+          dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo -p:WasmEnableJiterpreter=false -p:RunAOTCompilation=false -p:BlazorEnableCompression=false
 
       # Step 4: Add .nojekyll file to prevent Jekyll processing
       - name: Add .nojekyll file
