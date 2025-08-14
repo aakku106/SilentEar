@@ -36,18 +36,30 @@ jobs:
       # Step 5: Clean up source map references
       - name: Remove source map references
         run: |
-          find release/wwwroot/_framework -name "*.js" -exec sed -i '/\/\/# sourceMappingURL=/d' {} \;
+          # Remove source map references from all JS and CSS files
+          find release/wwwroot -name "*.js" -exec sed -i '/\/\/# sourceMappingURL=/d' {} \; 2>/dev/null || true
+          find release/wwwroot -name "*.css" -exec sed -i '/\/\*# sourceMappingURL=/d' {} \; 2>/dev/null || true
+          # Remove any .map files that might exist
+          find release/wwwroot -name "*.map" -delete 2>/dev/null || true
 
       # Step 6: Add .nojekyll file to prevent Jekyll processing
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
-      # Step 7: Fix missing CSS file (create empty one if it doesn't exist)
-      - name: Create missing CSS file if needed
+      # Step 7: Fix missing files after publish
+      - name: Create missing files if needed
         run: |
+          # Create SilentEar.styles.css if missing
           if [ ! -f "release/wwwroot/SilentEar.styles.css" ]; then
             echo "/* Generated styles */" > release/wwwroot/SilentEar.styles.css
           fi
+          # Copy manifest if missing
+          if [ ! -f "release/wwwroot/manifest.webmanifest" ]; then
+            cp SilentEar/wwwroot/manifest.webmanifest release/wwwroot/ 2>/dev/null || echo '{"name":"SilentEar","short_name":"SilentEar","start_url":"./","display":"standalone","theme_color":"#1a1a1a"}' > release/wwwroot/manifest.webmanifest
+          fi
+          # Copy icons if missing
+          cp SilentEar/wwwroot/icon-*.png release/wwwroot/ 2>/dev/null || true
+          cp SilentEar/wwwroot/favicon.png release/wwwroot/ 2>/dev/null || true
 
       # Step 8: Modify base tag for GitHub Pages subdirectory deployment
       - name: Change base tag in index.html
