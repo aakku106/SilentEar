@@ -1051,6 +1051,6 @@
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/compressed/eo1mtzsws3-{0}-oyz0vx2fzb-oyz0vx2fzb.gz
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/staticwebassets.build.json.cache
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/compressed/p2og7octra-{0}-5656vx8xqo-5656vx8xqo.gz
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/compressed/81u9j1fvi0-{0}-53ttqvui6m-53ttqvui6m.gz
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/compressed/93a3mhfmeo-{0}-2uxj3pmx7b-2uxj3pmx7b.gz
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/compressed/csz46w9ro7-{0}-aeeinxrl6e-aeeinxrl6e.gz
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/compressed/81u9j1fvi0-{0}-uzg0tj7hfz-uzg0tj7hfz.gz
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/compressed/93a3mhfmeo-{0}-im0g1xurrn-im0g1xurrn.gz
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Debug/net8.0/compressed/csz46w9ro7-{0}-764a7hk5pf-764a7hk5pf.gz

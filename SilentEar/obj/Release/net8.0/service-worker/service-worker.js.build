@@ -1,4 +1,4 @@
-/* Manifest version: LeIxjO8r */
+/* Manifest version: 290IUVeM */
 // Cache names
 const CACHE_NAME = 'silentear-cache-v1';
 const OFFLINE_URL = 'index.html';
