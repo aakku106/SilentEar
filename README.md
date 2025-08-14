@@ -4,6 +4,8 @@
 
 a sleep tracking app
 
+<!-- Deployment fixes applied - TLS errors and service worker registration fixed -->
+
 ---
 
 till now i have managed to

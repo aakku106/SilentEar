@@ -9,13 +9,15 @@ on:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       # Step 1: Checkout the repository
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       # Step 2: Setup .NET SDK (for Blazor app)
       - name: Setup .NET
@@ -46,26 +48,36 @@ jobs:
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
-      # Step 7: Fix missing files after publish
-      - name: Create missing files if needed
+      # Step 7: Fix missing files after publish and ensure proper file structure
+      - name: Create missing files and copy essential assets
         run: |
           # Create SilentEar.styles.css if missing
           if [ ! -f "release/wwwroot/SilentEar.styles.css" ]; then
             echo "/* Generated styles */" > release/wwwroot/SilentEar.styles.css
           fi
-          # Copy manifest if missing
-          if [ ! -f "release/wwwroot/manifest.webmanifest" ]; then
-            cp SilentEar/wwwroot/manifest.webmanifest release/wwwroot/ 2>/dev/null || echo '{"name":"SilentEar","short_name":"SilentEar","start_url":"./","display":"standalone","theme_color":"#1a1a1a"}' > release/wwwroot/manifest.webmanifest
-          fi
-          # Copy icons if missing
-          cp SilentEar/wwwroot/icon-*.png release/wwwroot/ 2>/dev/null || true
-          cp SilentEar/wwwroot/favicon.png release/wwwroot/ 2>/dev/null || true
+          
+          # Ensure all essential files are copied from source
+          cp -f SilentEar/wwwroot/manifest.webmanifest release/wwwroot/ 2>/dev/null || echo '{"name":"SilentEar","short_name":"SilentEar","start_url":"./","display":"standalone","theme_color":"#1a1a1a"}' > release/wwwroot/manifest.webmanifest
+          cp -f SilentEar/wwwroot/icon-*.png release/wwwroot/ 2>/dev/null || true
+          cp -f SilentEar/wwwroot/favicon.png release/wwwroot/ 2>/dev/null || true
+          cp -f SilentEar/wwwroot/service-worker.js release/wwwroot/ 2>/dev/null || true
+          cp -f SilentEar/wwwroot/service-worker-assets.js release/wwwroot/ 2>/dev/null || true
+          
+          # Ensure js directory and audioRecorder.js exist
+          mkdir -p release/wwwroot/js
+          cp -f SilentEar/js/audioRecorder.js release/wwwroot/js/ 2>/dev/null || true
+          cp -f SilentEar/wwwroot/js/audioRecorder.js release/wwwroot/js/ 2>/dev/null || true
 
       # Step 8: Modify base tag for GitHub Pages subdirectory deployment
       - name: Change base tag in index.html
         run: sed -i 's|<base href="/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
 
-      # Step 9: Deploy to GitHub Pages
+      # Step 9: Fix service worker registration for better error handling
+      - name: Fix service worker registration
+        run: |
+          sed -i 's|navigator\.serviceWorker\.register("service-worker\.js");|if ("serviceWorker" in navigator) { navigator.serviceWorker.register("service-worker.js").catch(function(error) { console.log("Service Worker registration failed:", error); }); }|g' release/wwwroot/index.html
+
+      # Step 10: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
