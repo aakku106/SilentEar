@@ -97,13 +97,13 @@
     <script src="js/audioRecorder.js"></script>
     <script>
       // Disable source map requests to prevent 404 errors
-      window.addEventListener('error', function(e) {
-        if (e.filename && e.filename.endsWith('.map')) {
+      window.addEventListener("error", function (e) {
+        if (e.filename && e.filename.endsWith(".map")) {
           e.preventDefault();
           return false;
         }
       });
-      
+
       // Hide splash screen when Blazor starts (don't call Blazor.start() as it auto-starts)
       window.addEventListener("DOMContentLoaded", function () {
         // Listen for Blazor ready event instead of manually starting
