@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SilentEar")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea922c0ef40ff297455b09479d0ba2abc1800b56")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8b446048e462eb8b87db58a267b5e74073d8d56e")]
 [assembly: System.Reflection.AssemblyProductAttribute("SilentEar")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SilentEar")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

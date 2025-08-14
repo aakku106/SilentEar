@@ -1,0 +1,9 @@
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/release/web.config
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/release/emcc-props.json
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/release/SilentEar.staticwebassets.endpoints.json
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/release/wwwroot/appsettings.Development.json
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/release/wwwroot/appsettings.json
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/release/wwwroot/_framework/blazor.boot.json
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/_framework/blazor.boot.json
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/emcc-props.json
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/publish/web.config

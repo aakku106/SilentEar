@@ -1,8 +1,8 @@
 self.assetsManifest = {
-  "version": "ROUNg09A",
+  "version": "hC7MjaNd",
   "assets": [
     {
-      "hash": "sha256-Qlj6NGS978hjVyrYLtW5G6trKGerdW4Fwgvr2eUo/lU=",
+      "hash": "sha256-szYZJI0jDnC2SUYHJHWR1zxzQ1bKw3G12Sq28LOGpCw=",
       "url": "_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"
     },
     {
@@ -122,11 +122,11 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Win32.Registry.wasm"
     },
     {
-      "hash": "sha256-QaAP0GnXK9yfkospRFJwyDJGaGVf8dxvMAsj1ULQOXM=",
+      "hash": "sha256-XzVcXRSdnPWMYs2HJf2Y1ST62m6A+H8uUgDsjbipJU0=",
       "url": "_framework/SilentEar.pdb"
     },
     {
-      "hash": "sha256-Oblx4MiO7CDi5xicyKrtqVJfvdUrgQV8aVf20DqquKY=",
+      "hash": "sha256-KRDmNfSPUcAlKQr9Gzdza+nqzgcNKIM/AdprTaZQ5f0=",
       "url": "_framework/SilentEar.wasm"
     },
     {
@@ -778,11 +778,11 @@ self.assetsManifest = {
       "url": "_framework/WindowsBase.wasm"
     },
     {
-      "hash": "sha256-Z+eDm8Pw/iqhGKrrt4EmZld5GBChKFB+/0/UhCBs0SM=",
+      "hash": "sha256-Q+aqSJw+BJwDj8otsHAfou+vY/xKxOlppXx5u1eWFqk=",
       "url": "_framework/blazor.boot.json"
     },
     {
-      "hash": "sha256-gvHfnndfEu1tRf0rFb5988rWq7ITIotOaE8+AMbKYbc=",
+      "hash": "sha256-rcIWTVNnYus6VWf2Z2U1g/JzlC07Ym02cFjHtI59Xsc=",
       "url": "_framework/blazor.webassembly.js"
     },
     {
