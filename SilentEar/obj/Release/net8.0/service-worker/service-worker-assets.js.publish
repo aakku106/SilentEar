@@ -1,24 +1,24 @@
 self.assetsManifest = {
-  "version": "OeAhY0dg",
+  "version": "v5Pov4n7",
   "assets": [
     {
       "hash": "sha256-ujAaeCtkBoeJCZUIN2ae2svZ96Fyq9az0/zBwhOQOc4=",
       "url": "SilentEar.styles.css"
     },
     {
-      "hash": "sha256-szYZJI0jDnC2SUYHJHWR1zxzQ1bKw3G12Sq28LOGpCw=",
+      "hash": "sha256-Qlj6NGS978hjVyrYLtW5G6trKGerdW4Fwgvr2eUo/lU=",
       "url": "_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"
     },
     {
-      "hash": "sha256-W5OwpEZK2sBh3ndrVSpAMkA8YVa7yYC2aRd34J9ONuk=",
+      "hash": "sha256-XvPbAt32glQDhT2iVCABK82KMv8Jn9eLNDFXTlxGF5E=",
       "url": "_framework/Microsoft.AspNetCore.Components.Web.wasm"
     },
     {
-      "hash": "sha256-seVtoNDfzQciXue3LvPvIMA9hgox3tYbXZ3mK/GMOpI=",
+      "hash": "sha256-HkY/ueMntnr2loHI/qQbYwrBnVrVrWLVE9P3W1+4GHo=",
       "url": "_framework/Microsoft.AspNetCore.Components.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-TUU6ANDirscG2fXy8yd8C7RRnSuMaH7YodjzmTzGDWQ=",
+      "hash": "sha256-b0twTc+7xMLdmx7xPyR9aFn0Eok3KcM9zdT38SeX/iw=",
       "url": "_framework/Microsoft.AspNetCore.Components.wasm"
     },
     {
@@ -34,7 +34,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Extensions.Configuration.wasm"
     },
     {
-      "hash": "sha256-zyw5DfkCTFBsZkGxKArNQvIspAfHalTOkmVA4FV8NOQ=",
+      "hash": "sha256-sYQai5de7hyzqOBgKM/iP9o3J473nZaqnf6N4zuJIHo=",
       "url": "_framework/Microsoft.Extensions.DependencyInjection.Abstractions.wasm"
     },
     {
@@ -42,7 +42,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Extensions.DependencyInjection.wasm"
     },
     {
-      "hash": "sha256-7Zu9mf5A66dSbrtfWeqyG3c+7z4wLPxz6mRfvZWMXy8=",
+      "hash": "sha256-HbtMUzIIXgi7lfYQDxb6l6aMWu5jkNv6U/xZl/4uggo=",
       "url": "_framework/Microsoft.Extensions.Logging.Abstractions.wasm"
     },
     {
@@ -50,7 +50,7 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Extensions.Logging.wasm"
     },
     {
-      "hash": "sha256-jU67Fez8pypOqHShO/C6RHAZmEFgoq4RZGZtcWXOF08=",
+      "hash": "sha256-mngxZ7DtB5tYzmxZdVWZapJTSJ/yGClqQAcqOkLk3Lk=",
       "url": "_framework/Microsoft.Extensions.Options.wasm"
     },
     {
@@ -58,15 +58,15 @@ self.assetsManifest = {
       "url": "_framework/Microsoft.Extensions.Primitives.wasm"
     },
     {
-      "hash": "sha256-Px6z5DU/gBGylV4ob9sdcAVH4KKxpByP7WNTn+lZUro=",
+      "hash": "sha256-DwdIH1ydDREMe+gT+NPaWxTUdDh/bzbriY2XoySGIo4=",
       "url": "_framework/Microsoft.JSInterop.WebAssembly.wasm"
     },
     {
-      "hash": "sha256-5YCTBeqPLBCgnNIAwn6sgKyBKS13Ooms1CiP1kN6el8=",
+      "hash": "sha256-x95sJKmucIA620K9WKevOHlcJVchktBN6fWmMhLQ6eQ=",
       "url": "_framework/Microsoft.JSInterop.wasm"
     },
     {
-      "hash": "sha256-PY6xUcw/xCEB65/X9urmdqdnzegS4YObtkbQfHEloOg=",
+      "hash": "sha256-vyNDP5AZNsBKJ+PfizyzqdHL+39stQ4m0lZpP4/owrQ=",
       "url": "_framework/SilentEar.wasm"
     },
     {
@@ -102,7 +102,7 @@ self.assetsManifest = {
       "url": "_framework/System.Net.Primitives.wasm"
     },
     {
-      "hash": "sha256-OZTxtfFSOXeH199n9DYusw87jDKMfAlhoPT5sO2m8cc=",
+      "hash": "sha256-qc0/SRtuIfx0uEeJql0hic7GfXHaArBwT5TGf2WN1D4=",
       "url": "_framework/System.Private.CoreLib.wasm"
     },
     {
@@ -130,11 +130,11 @@ self.assetsManifest = {
       "url": "_framework/System.Text.RegularExpressions.wasm"
     },
     {
-      "hash": "sha256-NMOdsADopkobX9Nqqf/OkQaQJVGmGiEDVSirCHeomQ8=",
+      "hash": "sha256-SXpX0MhEgNFYmj9dGGxvt/e1qvfjpx9JN7/wE8la5t0=",
       "url": "_framework/blazor.boot.json"
     },
     {
-      "hash": "sha256-rcIWTVNnYus6VWf2Z2U1g/JzlC07Ym02cFjHtI59Xsc=",
+      "hash": "sha256-gvHfnndfEu1tRf0rFb5988rWq7ITIotOaE8+AMbKYbc=",
       "url": "_framework/blazor.webassembly.js"
     },
     {
@@ -208,6 +208,10 @@ self.assetsManifest = {
     {
       "hash": "sha256-fvhAWc929F5vv4XSvZXs+Z9HvqJH0lc/W1ZGA1k2840=",
       "url": "manifest.webmanifest"
+    },
+    {
+      "hash": "sha256-1jmdvk5wxY7kfibmwsyLyA1OewWiG99JNadTHIO76OI=",
+      "url": "mono-config.json"
     }
   ]
 };
