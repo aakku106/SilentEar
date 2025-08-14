@@ -1,0 +1,23 @@
+{
+  "runtimeOptions": {
+    "configProperties": {
+      "System.Runtime.InteropServices.JavaScript.JavaScriptExports.JSImportGenerator": false,
+      "Microsoft.Extensions.DependencyInjection.VerifyOpenGenerics": false
+    }
+  },
+  "wasmHostProperties": {
+    "perHostConfig": [
+      {
+        "name": "browser",
+        "html-path": "index.html",
+        "host-config": {
+          "mono-config": {
+            "jiterpreter": false,
+            "simd": false,
+            "exception-handling": false
+          }
+        }
+      }
+    ]
+  }
+}

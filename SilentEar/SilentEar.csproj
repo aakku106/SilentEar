@@ -7,6 +7,9 @@
     <ServiceWorkerAssetsManifest>service-worker-assets.js</ServiceWorkerAssetsManifest>
     <WasmEnableJiterpreter>false</WasmEnableJiterpreter>
     <RunAOTCompilation>false</RunAOTCompilation>
+    <BlazorEnableCompression>false</BlazorEnableCompression>
+    <WasmEnableExceptionHandling>false</WasmEnableExceptionHandling>
+    <EmccLinkOptimization>false</EmccLinkOptimization>
   </PropertyGroup>
 
   <ItemGroup>
