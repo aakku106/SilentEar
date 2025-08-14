@@ -8,7 +8,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>SilentEar</title>
-    <base href="/" />
+    <base href="/SilentEar/" />
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link rel="stylesheet" href="css/app.css" />
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -92,7 +92,14 @@
     <script src="_content/Microsoft.AspNetCore.Components.WebAssembly.Authentication/AuthenticationService.js"></script>
     <script src="_framework/blazor.webassembly.js"></script>
     <script>
-      navigator.serviceWorker.register("service-worker.js");
+      // Safe service worker registration with error handling
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("service-worker.js")
+          .catch(function (error) {
+            console.log("Service Worker registration failed:", error);
+          });
+      }
     </script>
     <script src="js/audioRecorder.js"></script>
     <script>

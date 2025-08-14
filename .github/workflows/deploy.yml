@@ -55,14 +55,14 @@ jobs:
           if [ ! -f "release/wwwroot/SilentEar.styles.css" ]; then
             echo "/* Generated styles */" > release/wwwroot/SilentEar.styles.css
           fi
-          
+
           # Ensure all essential files are copied from source
           cp -f SilentEar/wwwroot/manifest.webmanifest release/wwwroot/ 2>/dev/null || echo '{"name":"SilentEar","short_name":"SilentEar","start_url":"./","display":"standalone","theme_color":"#1a1a1a"}' > release/wwwroot/manifest.webmanifest
           cp -f SilentEar/wwwroot/icon-*.png release/wwwroot/ 2>/dev/null || true
           cp -f SilentEar/wwwroot/favicon.png release/wwwroot/ 2>/dev/null || true
           cp -f SilentEar/wwwroot/service-worker.js release/wwwroot/ 2>/dev/null || true
           cp -f SilentEar/wwwroot/service-worker-assets.js release/wwwroot/ 2>/dev/null || true
-          
+
           # Ensure js directory and audioRecorder.js exist
           mkdir -p release/wwwroot/js
           cp -f SilentEar/js/audioRecorder.js release/wwwroot/js/ 2>/dev/null || true
