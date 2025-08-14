@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SilentEar",
   "resources": {
-    "hash": "sha256-NOJkLJnd0zgAlLpwuhOnUcAxx+q19/55cimCS3tKocg=",
+    "hash": "sha256-1crTCRp0WKlB64vKh46NJAWb/KpIhgQoGaQKZB4kqZk=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-YyxJV6dv935qHoQAmjB+2qRjHeGpm4SyWxE0T/KvsIE="
     },
@@ -47,7 +47,7 @@
       "System.Text.Json.wasm": "sha256-shOqGRipaULUkqhrjt0k2ZjqzEDWpnGFXy/gAhsWH4g=",
       "System.Text.RegularExpressions.wasm": "sha256-hGZleNEZV17Dz5kzEWFvNqnurwCDj1PZ9QMtVOHwaI0=",
       "System.Private.CoreLib.wasm": "sha256-qc0/SRtuIfx0uEeJql0hic7GfXHaArBwT5TGf2WN1D4=",
-      "SilentEar.wasm": "sha256-vyNDP5AZNsBKJ+PfizyzqdHL+39stQ4m0lZpP4/owrQ="
+      "SilentEar.wasm": "sha256-k7d1FkfZRMkZqnzpOI7ZRH0QcsKtkffVQ9XDFAsItlg="
     }
   },
   "cacheBootResources": true,

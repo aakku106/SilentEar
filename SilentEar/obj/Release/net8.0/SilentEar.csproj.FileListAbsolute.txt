@@ -41,7 +41,6 @@
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/Microsoft.Win32.Registry.wasm
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/mscorlib.wasm
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/netstandard.wasm
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/SilentEar.pdb
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/SilentEar.wasm
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/System.AppContext.wasm
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/System.Buffers.wasm
@@ -257,7 +256,6 @@
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/System.ComponentModel.wasm.gz
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/System.Reflection.Emit.Lightweight.wasm.gz
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/System.Data.wasm.gz
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/SilentEar.pdb.gz
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/netstandard.wasm.gz
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/System.ComponentModel.DataAnnotations.wasm.gz
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/wwwroot/_framework/System.Runtime.Loader.wasm.gz
@@ -417,7 +415,6 @@
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/SilentEar.staticwebassets.runtime.json
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/SilentEar.staticwebassets.endpoints.json
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/SilentEar.dll
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/SilentEar.pdb
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/Microsoft.AspNetCore.Authorization.dll
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/Microsoft.AspNetCore.Components.dll
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/Microsoft.AspNetCore.Components.Authorization.dll
@@ -627,7 +624,6 @@
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/SilentEar.AssemblyInfo.cs
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/SilentEar.csproj.CoreCompileInputs.cache
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/SilentEar.MvcApplicationPartsAssemblyInfo.cache
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/SilentEar.sourcelink.json
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/webcil/Microsoft.AspNetCore.Authorization.wasm
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/webcil/Microsoft.AspNetCore.Components.wasm
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/webcil/Microsoft.AspNetCore.Components.Authorization.wasm
@@ -833,7 +829,6 @@
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/SilentEar.csproj.Up2Date
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/SilentEar.dll
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/refint/SilentEar.dll
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/SilentEar.pdb
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/ref/SilentEar.dll
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/release/web.config
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/bin/Release/net8.0/release/emcc-props.json
@@ -1051,6 +1046,5 @@
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/compressed/eo1mtzsws3-{0}-oyz0vx2fzb-oyz0vx2fzb.gz
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/staticwebassets.build.json.cache
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/compressed/p2og7octra-{0}-mv535bwyet-mv535bwyet.gz
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/compressed/81u9j1fvi0-{0}-bde0rsnqk1-bde0rsnqk1.gz
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/compressed/93a3mhfmeo-{0}-w8ru07r6c8-w8ru07r6c8.gz
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/compressed/csz46w9ro7-{0}-wj167er2x6-wj167er2x6.gz
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/compressed/81u9j1fvi0-{0}-73a67uefmg-73a67uefmg.gz
+/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/obj/Release/net8.0/compressed/csz46w9ro7-{0}-r6t096sqwd-r6t096sqwd.gz
