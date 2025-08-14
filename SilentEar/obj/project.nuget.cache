@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PvPbIBOK9Kg=",
+  "dgSpecHash": "POvrMem5DG0=",
   "success": true,
   "projectFilePath": "/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/SilentEar.csproj",
   "expectedPackageFiles": [
@@ -30,10 +30,12 @@
     "/Users/aakku/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/Users/aakku/.nuget/packages/microsoft.jsinterop/8.0.11/microsoft.jsinterop.8.0.11.nupkg.sha512",
     "/Users/aakku/.nuget/packages/microsoft.jsinterop.webassembly/8.0.11/microsoft.jsinterop.webassembly.8.0.11.nupkg.sha512",
-    "/Users/aakku/.nuget/packages/microsoft.net.illink.tasks/8.0.11/microsoft.net.illink.tasks.8.0.11.nupkg.sha512",
-    "/Users/aakku/.nuget/packages/microsoft.net.sdk.webassembly.pack/9.0.0/microsoft.net.sdk.webassembly.pack.9.0.0.nupkg.sha512",
+    "/Users/aakku/.nuget/packages/microsoft.net.illink.tasks/8.0.16/microsoft.net.illink.tasks.8.0.16.nupkg.sha512",
+    "/Users/aakku/.nuget/packages/microsoft.net.sdk.webassembly.pack/10.0.0-preview.5.25277.114/microsoft.net.sdk.webassembly.pack.10.0.0-preview.5.25277.114.nupkg.sha512",
     "/Users/aakku/.nuget/packages/system.io.pipelines/8.0.0/system.io.pipelines.8.0.0.nupkg.sha512",
-    "/Users/aakku/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/8.0.11/microsoft.netcore.app.runtime.mono.browser-wasm.8.0.11.nupkg.sha512"
+    "/Users/aakku/.nuget/packages/microsoft.netcore.app.ref/8.0.16/microsoft.netcore.app.ref.8.0.16.nupkg.sha512",
+    "/Users/aakku/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.16/microsoft.aspnetcore.app.ref.8.0.16.nupkg.sha512",
+    "/Users/aakku/.nuget/packages/microsoft.netcore.app.runtime.mono.browser-wasm/8.0.17/microsoft.netcore.app.runtime.mono.browser-wasm.8.0.17.nupkg.sha512"
   ],
   "logs": []
 }
