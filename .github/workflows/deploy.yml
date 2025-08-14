@@ -25,15 +25,20 @@ jobs:
         with:
           dotnet-version: "8.0.x" # Use latest stable patch version
 
-      # Step 3: Install WASM workload and Restore
-      - name: Install workload and restore
+      # Step 3: Clean and Install WASM workload and Restore
+      - name: Clean, install workload and restore
         run: |
+          # Clean any previous builds to avoid version mismatches
+          rm -rf release/
+          rm -rf SilentEar/bin/
+          rm -rf SilentEar/obj/
+          rm -rf SilentEar/_framework/
           dotnet workload install wasm-tools
-          dotnet restore SilentEar/SilentEar.csproj
+          dotnet restore SilentEar/SilentEar.csproj --force
 
-      # Step 4: Publish the Blazor Project
+      # Step 4: Publish the Blazor Project with clean build
       - name: Publish .NET Project
-        run: dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo -p:DebugType=None -p:DebugSymbols=false
+        run: dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo -p:DebugType=None -p:DebugSymbols=false --force
 
       # Step 5: Clean up source map references
       - name: Remove source map references
