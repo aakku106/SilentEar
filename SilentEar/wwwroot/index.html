@@ -96,13 +96,14 @@
     </script>
     <script src="js/audioRecorder.js"></script>
     <script>
+      // Hide splash screen when Blazor starts (don't call Blazor.start() as it auto-starts)
       window.addEventListener("DOMContentLoaded", function () {
-        // Hide splash after Blazor is ready
-        Blazor.start().then(function () {
+        // Listen for Blazor ready event instead of manually starting
+        document.addEventListener("DOMContentLoaded", function () {
           setTimeout(function () {
             var splash = document.getElementById("static-splash");
             if (splash) splash.style.display = "none";
-          }, 400); // fade out after Blazor loads
+          }, 2000); // Hide after 2 seconds
         });
       });
     </script>
