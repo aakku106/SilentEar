@@ -42,7 +42,7 @@ jobs:
 
       # Step 6: Modify base tag for GitHub Pages subdirectory deployment
       - name: Change base tag in index.html
-        run: sed -i 's|<base href="/SilentEar/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
+        run: sed -i 's|<base href="/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
 
       # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
