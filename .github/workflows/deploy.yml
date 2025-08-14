@@ -60,3 +60,7 @@ jobs:
           branch: gh-pages # Target the gh-pages branch
           folder: release/wwwroot # Path to the built app
           force: true # Force push to clear cache
+          clean: true # Remove old files completely
+          clean-exclude: |
+            .git/
+            .github/
