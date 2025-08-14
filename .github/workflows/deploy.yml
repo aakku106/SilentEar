@@ -21,13 +21,13 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "8.0.x" # Make sure this version matches your project
+          dotnet-version: "8.0.100" # Use specific stable version
 
       # Step 3: Restore and Publish the Blazor Project
       - name: Restore and Publish .NET Project
         run: |
           dotnet restore SilentEar/SilentEar.csproj
-          dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo
+          dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo -p:WasmEnableJiterpreter=false
 
       # Step 4: Add .nojekyll file to prevent Jekyll processing
       - name: Add .nojekyll file
