@@ -31,11 +31,18 @@ jobs:
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
-      # Step 5: Modify base tag for GitHub Pages subdirectory deployment
+      # Step 5: Fix missing CSS file (create empty one if it doesn't exist)
+      - name: Create missing CSS file if needed
+        run: |
+          if [ ! -f "release/wwwroot/SilentEar.styles.css" ]; then
+            echo "/* Generated styles */" > release/wwwroot/SilentEar.styles.css
+          fi
+
+      # Step 6: Modify base tag for GitHub Pages subdirectory deployment
       - name: Change base tag in index.html
         run: sed -i 's|<base href="/SilentEar/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
 
-      # Step 6: Deploy to GitHub Pages
+      # Step 7: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
