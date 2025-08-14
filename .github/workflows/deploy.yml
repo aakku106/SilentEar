@@ -1,10 +1,28 @@
 # @format
 
 name: Deploy to GitHub Pages
+      # Step 6: Add .nojeky      # Step 9: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages # Target the gh-pages branch
+          folder: release/wwwroot # Path to the built app
+          force: true # Force push to clear cachee to prevent Jekyll processing
+      - name: Add .nojekyll file
+        run: touch release/wwwroot/.nojekyll
 
-on:
-  push:
-    branches: [main]
+      # Step 7: Fix missing CSS file (create empty one if it doesn't exist)
+      - name: Create missing CSS file if needed
+        run: |
+          if [ ! -f "release/wwwroot/SilentEar.styles.css" ]; then
+            echo "/* Generated styles */" > release/wwwroot/SilentEar.styles.css
+          fi
+
+      # Step 8: Modify base tag for GitHub Pages subdirectory deployment
+      - name: Change base tag in index.html
+        run: sed -i 's|<base href="/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
+
+      # Step 9: Deploy to GitHub Pages branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -31,9 +49,14 @@ jobs:
 
       # Step 4: Publish the Blazor Project
       - name: Publish .NET Project
-        run: dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo
+        run: dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo -p:DebugType=None -p:DebugSymbols=false
 
-      # Step 5: Add .nojekyll file to prevent Jekyll processing
+      # Step 5: Clean up source map references
+      - name: Remove source map references
+        run: |
+          find release/wwwroot/_framework -name "*.js" -exec sed -i '/\/\/# sourceMappingURL=/d' {} \;
+
+      # Step 6: Add .nojekyll file to prevent Jekyll processing
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
