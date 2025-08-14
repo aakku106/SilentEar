@@ -1,28 +1,10 @@
 # @format
 
 name: Deploy to GitHub Pages
-      # Step 6: Add .nojeky      # Step 9: Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages # Target the gh-pages branch
-          folder: release/wwwroot # Path to the built app
-          force: true # Force push to clear cachee to prevent Jekyll processing
-      - name: Add .nojekyll file
-        run: touch release/wwwroot/.nojekyll
 
-      # Step 7: Fix missing CSS file (create empty one if it doesn't exist)
-      - name: Create missing CSS file if needed
-        run: |
-          if [ ! -f "release/wwwroot/SilentEar.styles.css" ]; then
-            echo "/* Generated styles */" > release/wwwroot/SilentEar.styles.css
-          fi
-
-      # Step 8: Modify base tag for GitHub Pages subdirectory deployment
-      - name: Change base tag in index.html
-        run: sed -i 's|<base href="/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
-
-      # Step 9: Deploy to GitHub Pages branches: [main]
+on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -60,20 +42,21 @@ jobs:
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
-      # Step 6: Fix missing CSS file (create empty one if it doesn't exist)
+      # Step 7: Fix missing CSS file (create empty one if it doesn't exist)
       - name: Create missing CSS file if needed
         run: |
           if [ ! -f "release/wwwroot/SilentEar.styles.css" ]; then
             echo "/* Generated styles */" > release/wwwroot/SilentEar.styles.css
           fi
 
-      # Step 7: Modify base tag for GitHub Pages subdirectory deployment
+      # Step 8: Modify base tag for GitHub Pages subdirectory deployment
       - name: Change base tag in index.html
         run: sed -i 's|<base href="/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
 
-      # Step 8: Deploy to GitHub Pages
+      # Step 9: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages # Target the gh-pages branch
           folder: release/wwwroot # Path to the built app
+          force: true # Force push to clear cache
