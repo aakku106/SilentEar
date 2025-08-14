@@ -1,4 +1,4 @@
-/* Manifest version: N3RS9mBS */
+/* Manifest version: dcdkNjFm */
 // Cache names
 const CACHE_NAME = 'silentear-cache-v1';
 const OFFLINE_URL = 'index.html';

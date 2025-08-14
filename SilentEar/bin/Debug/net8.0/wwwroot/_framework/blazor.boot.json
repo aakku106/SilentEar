@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "SilentEar",
   "resources": {
-    "hash": "sha256-y8WHvsRn19T2fbhl4KI12BOmWalw9C+nV6jtAYwvBNU=",
+    "hash": "sha256-e7lHXFFplSVM2OVZIrCoEN2VVnfOFMDizIfmAIK1Gbs=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-YyxJV6dv935qHoQAmjB+2qRjHeGpm4SyWxE0T/KvsIE="
     },
@@ -211,10 +211,10 @@
       "mscorlib.wasm": "sha256-flmBXVpp8uDpWBNEJuRkqo3Qnir1KADo5a1rCQISkPs=",
       "netstandard.wasm": "sha256-iuCVrIBmiGbXpNVvYkBmSt16BNEjbbD82vYrtHimftc=",
       "System.Private.CoreLib.wasm": "sha256-1Xa/xaUoA/iRxpDqZPUUzL8QaTawkoJLhGmxtRv9ZJI=",
-      "SilentEar.wasm": "sha256-MSGAMRPYSekzdb1gcCQjKgjcdAf4xJQgWpvpxf9MlGE="
+      "SilentEar.wasm": "sha256-0vGs/gfEQcAysVZovjbO/8QKmnS6XGXz44IsQMBYQBY="
     },
     "pdb": {
-      "SilentEar.pdb": "sha256-wb6x2OtcmVEhILKbSRrWQz3J7xkJQbNEhoV2ndUEj90="
+      "SilentEar.pdb": "sha256-qqSNeI8vYng7TwYpSYLFpcQEnCLpV9hu1w7VWEofyJw="
     }
   },
   "cacheBootResources": true,
