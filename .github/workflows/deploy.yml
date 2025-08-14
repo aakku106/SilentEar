@@ -23,15 +23,19 @@ jobs:
         with:
           dotnet-version: "8.0.x"
 
-      # Step 3: Install WASM workload and Restore
-      - name: Install workload and restore
+      # Step 3: Clean and Install WASM workload and Restore
+      - name: Clean, install workload and restore
         run: |
+          # Clean any previous builds to ensure fresh .NET files
+          rm -rf release/
+          rm -rf SilentEar/bin/
+          rm -rf SilentEar/obj/
           dotnet workload install wasm-tools
-          dotnet restore SilentEar/SilentEar.csproj
+          dotnet restore SilentEar/SilentEar.csproj --force
 
-      # Step 4: Publish the Blazor Project
+      # Step 4: Publish the Blazor Project (clean build)
       - name: Publish .NET Project
-        run: dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo
+        run: dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo --force
 
       # Step 5: Add .nojekyll file to prevent Jekyll processing
       - name: Add .nojekyll file
@@ -56,7 +60,7 @@ jobs:
       - name: Change base tag in index.html
         run: sed -i 's|<base href="/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
 
-      # Step 8: Deploy to GitHub Pages
+      # Step 8: Deploy to GitHub Pages (force clean deployment)
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
@@ -64,3 +68,5 @@ jobs:
           folder: release/wwwroot
           force: true
           clean: true
+          clean-exclude: |
+            .git/
