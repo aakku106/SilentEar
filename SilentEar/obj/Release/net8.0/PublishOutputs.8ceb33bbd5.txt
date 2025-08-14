@@ -1,2 +1,0 @@
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/release/emcc-props.json
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/SilentEar/release/web.config

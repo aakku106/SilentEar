@@ -1,9 +1,4 @@
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/release/web.config
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/release/emcc-props.json
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/release/SilentEar.staticwebassets.endpoints.json
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/release/wwwroot/appsettings.Development.json
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/release/wwwroot/appsettings.json
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/release/wwwroot/_framework/blazor.boot.json
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/_framework/blazor.boot.json
-/Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/emcc-props.json
 /Users/aakku/Documents/Blazor_personal_projects/SleepTracking/release/web.config
