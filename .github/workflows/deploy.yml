@@ -31,14 +31,13 @@ jobs:
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
-      # Step 5: (Optional) Modify base tag in index.html (only if needed for subdirectory deployment)
-      # You can skip this if your app is at the root of GitHub Pages
+      # Step 5: Modify base tag for GitHub Pages subdirectory deployment
       - name: Change base tag in index.html
-        run: sed -i 's|<base href="\/" />|<base href="\/" />|g' release/wwwroot/index.html
+        run: sed -i 's|<base href="/SilentEar/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
 
       # Step 6: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # Target the gh-pages branch
-          folder: release/wwwroot  # Path to the built app
+          branch: gh-pages # Target the gh-pages branch
+          folder: release/wwwroot # Path to the built app
