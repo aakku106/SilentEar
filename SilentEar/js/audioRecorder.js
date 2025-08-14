@@ -6,6 +6,9 @@ let isMonitoring = false;
 let dotNetHelper;
 let currentAudio = null;
 let db = null;
+let audioContext = null;
+let analyzer = null;
+let source = null;
 
 window.audioRecorder = {
   requestPermission: async function () {
@@ -23,13 +26,13 @@ window.audioRecorder = {
     dotNetHelper = dotNetRef;
     try {
       mediaStream = await navigator.mediaDevices.getUserMedia({ audio: true });
-      const audioContext = new AudioContext();
-      const analyzer = audioContext.createAnalyser();
-      const source = audioContext.createMediaStreamSource(mediaStream);
+      audioContext = new AudioContext();
+      analyzer = audioContext.createAnalyser();
+      source = audioContext.createMediaStreamSource(mediaStream);
       source.connect(analyzer);
 
       isMonitoring = true;
-      this.checkAudioLevel(analyzer, threshold);
+      this.checkAudioLevel(threshold);
     } catch (error) {
       console.error("Error starting monitoring:", error);
     }
@@ -47,13 +50,19 @@ window.audioRecorder = {
       currentAudio.pause();
       currentAudio = null;
     }
+    if (audioContext) {
+      audioContext.close();
+      audioContext = null;
+    }
+    analyzer = null;
+    source = null;
     mediaStream = null;
     mediaRecorder = null;
     dotNetHelper.invokeMethodAsync("OnRecordingStatusChange", false);
   },
 
-  checkAudioLevel: function (analyzer, threshold) {
-    if (!isMonitoring) return;
+  checkAudioLevel: function (threshold) {
+    if (!isMonitoring || !analyzer) return;
 
     const dataArray = new Uint8Array(analyzer.frequencyBinCount);
     analyzer.getByteTimeDomainData(dataArray);
@@ -66,7 +75,7 @@ window.audioRecorder = {
       this.startRecording();
     }
 
-    requestAnimationFrame(() => this.checkAudioLevel(analyzer, threshold));
+    requestAnimationFrame(() => this.checkAudioLevel(threshold));
   },
 
   startRecording: function () {
