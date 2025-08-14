@@ -21,30 +21,34 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: "8.0.101" # Use very stable version without jiterpreter issues
+          dotnet-version: "8.0.x" # Use latest stable patch version
 
-      # Step 3: Restore and Publish the Blazor Project
-      - name: Restore and Publish .NET Project
+      # Step 3: Install WASM workload and Restore
+      - name: Install workload and restore
         run: |
+          dotnet workload install wasm-tools
           dotnet restore SilentEar/SilentEar.csproj
-          dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo -p:WasmEnableJiterpreter=false -p:RunAOTCompilation=false -p:BlazorEnableCompression=false
 
-      # Step 4: Add .nojekyll file to prevent Jekyll processing
+      # Step 4: Publish the Blazor Project
+      - name: Publish .NET Project
+        run: dotnet publish SilentEar/SilentEar.csproj -c Release -o release --nologo
+
+      # Step 5: Add .nojekyll file to prevent Jekyll processing
       - name: Add .nojekyll file
         run: touch release/wwwroot/.nojekyll
 
-      # Step 5: Fix missing CSS file (create empty one if it doesn't exist)
+      # Step 6: Fix missing CSS file (create empty one if it doesn't exist)
       - name: Create missing CSS file if needed
         run: |
           if [ ! -f "release/wwwroot/SilentEar.styles.css" ]; then
             echo "/* Generated styles */" > release/wwwroot/SilentEar.styles.css
           fi
 
-      # Step 6: Modify base tag for GitHub Pages subdirectory deployment
+      # Step 7: Modify base tag for GitHub Pages subdirectory deployment
       - name: Change base tag in index.html
         run: sed -i 's|<base href="/" />|<base href="/SilentEar/" />|g' release/wwwroot/index.html
 
-      # Step 7: Deploy to GitHub Pages
+      # Step 8: Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
